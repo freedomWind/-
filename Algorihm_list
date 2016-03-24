@@ -1,0 +1,17 @@
+public Class Algorihm_list
+{
+// 单链表逆序，时间和空间开销都O(1)
+  static void Swap(ref Node pre, ref Node next)
+  {
+    Node temp = new Node();
+    temp = next.next;
+    next.next = pre;
+    pre = next;
+    next = temp;
+    if(next != null)
+      Swap(ref pre,ref next);
+    MyListHead = pre;    //表头重置
+  }
+  
+  
+}
